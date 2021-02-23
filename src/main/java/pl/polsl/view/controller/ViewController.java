@@ -73,4 +73,8 @@ public class ViewController {
         return "reports";
     }
 
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
+    public String search(Model model) {
+        return "search";
+    }
 }
