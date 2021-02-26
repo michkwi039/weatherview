@@ -10,8 +10,12 @@ How to start app:
     Password:root
 3. Start the microservice responsible for managing data (needs to be first in order to create kafka topic)
 4. Start the other microsevices
-This is a part of WeatherApp responsible for managing data:
+This is a part of WeatherApp responsible for displaying data:
 ENDPOINTS:
-GET "/reports/{date}" -returns a list of weatherreports for the date given in parameter:  parameter {date} contains date that user wants data about
-GET "/next"-returns a list of weatherreports chronologicaly later compared to currently displayed data
-GET "/previous"-returns a list of weatherreports chronologicaly earlier compared to currently displayed data
+GET "/reports"- Creates a request to microservice responsible for managing data and returns a name of the view that will be displayed: 
+Parameters:
+Optional :string {date} view will display data for a provided date
+Optional: boolean {next} view will display a list of weatherreports chronologicaly later compared to currently displayed data
+Optional: boolean {previous} view will display a list of weatherreports chronologicaly earlier compared to currently displayed data
+
+GET “/search”-returns a name of view that displays search page
