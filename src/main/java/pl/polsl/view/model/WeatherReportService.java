@@ -17,7 +17,7 @@ import java.util.Map;
 public class WeatherReportService {
 
     public ArrayList<WeatherReport> getReportsByDate(String date){
-        final String uri = "http://processor:8082/reports/{date}";
+        final String uri = "http://localhost:8082/reports/{date}";
 //        Date data=new Date();
 //        DateFormat formatter;
 //        formatter = new SimpleDateFormat("MM/dd/yyyy");
@@ -39,7 +39,7 @@ public class WeatherReportService {
     }
 
     public ArrayList<WeatherReport> getNextReports(){
-        final String uri = "http://processor:8082/next";
+        final String uri = "http://localhost:8082/next";
 
 
         RestTemplate restTemplate = new RestTemplate();
@@ -49,7 +49,7 @@ public class WeatherReportService {
         return result.getWeatherReports();
     }
     public ArrayList<WeatherReport> getPreviousReports(){
-        final String uri = "http://processor:8082/previous";
+        final String uri = "http://localhost:8082/previous";
 
 
         RestTemplate restTemplate = new RestTemplate();
